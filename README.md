@@ -15,4 +15,4 @@ $ dotnet run
 browse to [https://localhost:5001](https://localhost:5001)
 
 ---
-You can also review the latest versuon of this app running on [Heroku](http://verseofday.herokuapp.com/)
+You can also review the latest version of this app running on [Heroku](http://verseofday.herokuapp.com/)
