@@ -6,6 +6,28 @@
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0-preview.3.21201.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.0-preview.3.21201.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.5" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="Pages\**" />
+      <Compile Remove="Views\Favorite\**" />
+      <Compile Remove="Controllers\ApiController.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="Pages\**" />
+      <EmbeddedResource Remove="Views\Favorite\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="Pages\**" />
+      <None Remove="Views\Favorite\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Remove="Pages\**" />
+      <Content Remove="Views\Favorite\Index.cshtml" />
+      <Content Remove="Views\Favorite\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Favorite\Index.cshtml" />
     </ItemGroup>
 </Project>

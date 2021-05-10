@@ -3,6 +3,42 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Start Date</span>
+        <input id="startdate" type="date" class="form-control date-picker" aria-label="Start Date" aria-describedby="basic-addon1" required>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text"># Verses</span>
+        <input id="pagesize" type="number" class="form-control" placeholder="10" aria-label="Count">
+    </div>
+    <button type="button" class="btn btn-outline-primary btn-sm"
+            onclick="VerseOfTheDay.submit()">
+        Submit
+    </button>
+</div>
+<div class="verse-container">
+@foreach (var verse in Model.Verses)
+{
+    <div class="card ml-auto" style="margin: 10px auto">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <a href="@verse.Url">
+                    <img src="@verse.ImageLink" class="card-img" alt="@verse.ReferenceText">
+                </a>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text">@verse.VerseText</p>
+                    <p class="card-text">
+                        <small class="text-muted">@verse.ReferenceText</small>
+                    </p>
+                    <button type="button" class="btn btn-outline-secondary btn-sm"
+                            onclick="VerseOfTheDay.addFavorite('@verse.VerseDate')">
+                        Favorite
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 </div>
